@@ -1,0 +1,518 @@
+:root {
+  --bg_color: #F2F2F2;
+  --gradient_bg: linear-gradient(to bottom, #1b37721f 0%, #1B3672 100%);
+  --white: #FFFFFF;
+  --onboarding_title: 28pt;
+  --onboarding_st: 14pt;
+  --onboarding_button: 15pt;
+  --body_login: #1B3672;
+  --blue_color: #1B3672;
+  --yellow_btn: #FFCC00;
+  --placeholder: #888888;
+  --white: #FFFFFF;
+  --font_menu_rect: #D4B151;
+  --font_service: 25pt;
+  --font_realisation: 20pt;
+  --outline: #ffffff;
+  --texte: #ffffff;
+  --border: 2px solid var(--outline);
+  --dots-color: #DFBD5C;
+}
+
+* {
+  margin: 0;
+  font-family: "Poppins";
+}
+
+p {
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg_color);
+}
+
+.body_login {
+  background-color: var(--body_login);
+}
+
+a {
+  text-decoration: none;
+  color: var(--texte);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.phone_size {
+  margin: auto;
+  max-width: 450px;
+}
+
+.width {
+  width: 95%;
+  margin: auto;
+}
+
+.space_bottom {
+  margin-bottom: 5px;
+}
+
+.space_card {
+  margin-bottom: 10px;
+}
+
+.space_bottom2 {
+  margin-bottom: 15px;
+}
+
+.background_pic {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: var(--gradient_bg);
+  background-size: cover;
+  background-position: center;
+}
+.background_pic .logobg {
+  width: 70px;
+  position: absolute;
+  z-index: 2;
+  margin: 15px 15px;
+}
+.background_pic .logobg img {
+  width: 100%;
+}
+.background_pic .gradient {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.background_pic .gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--gradient_bg);
+  z-index: 2;
+}
+.background_pic .gradient img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.connect_items {
+  top: 400px;
+  right: 0;
+  left: 0;
+  text-align: center;
+  position: absolute;
+  z-index: 4;
+  flex-direction: column;
+  color: var(--white);
+}
+.connect_items h2 {
+  font-weight: 700;
+  font-size: var(--onboarding_title);
+}
+.connect_items h3 {
+  font-weight: 400;
+  font-size: var(--onboarding_st);
+  max-width: 380px;
+}
+.connect_items .step_onboarding,
+.connect_items .step {
+  display: none;
+}
+.connect_items .onboard_prev_next {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: var(--blue_color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: var(--onboarding_button);
+  font-weight: 400;
+  cursor: pointer;
+}
+.connect_items .onboard_prev_next:hover {
+  opacity: 0.8;
+}
+.connect_items .onboard_prev_next img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.loginForm {
+  width: 100%;
+  justify-content: center;
+}
+.loginForm .login_items {
+  width: 95%;
+  top: 300px;
+  margin: auto;
+}
+.loginForm .login_items .login_items_all {
+  width: 100%;
+  flex-direction: column;
+}
+.loginForm .login_items .login_items_all .step_login {
+  flex-direction: column;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.loginForm .login_items .login_items_all .step_login h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.loginForm .login_items .login_items_all .step_login .phone_number {
+  position: relative;
+  width: 95%;
+}
+.loginForm .login_items .login_items_all .step_login .phone_number input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+  background: var(--white);
+}
+.loginForm .login_items .login_items_all .step_login .phone_number label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  background: var(--white);
+  padding: 0 5px;
+  color: #888;
+  font-size: 16px;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+.loginForm .login_items .login_items_all .step_login .phone_number input:focus + label,
+.loginForm .login_items .login_items_all .step_login .phone_number input:not(:placeholder-shown) + label {
+  top: 0px;
+  font-size: 14px;
+  color: var(--blue_color);
+  background: var(--white);
+  border-radius: 5px;
+}
+.loginForm .login_items .login_items_all .step_login .phone_number input:focus {
+  border: 2px solid #007BFF;
+}
+.loginForm .login_items .login_items_all .loginBtn {
+  width: 90%;
+  justify-content: center;
+}
+.loginForm .login_items .login_items_all .loginBtn button.login_button {
+  margin-top: 10px;
+  background-color: var(--yellow_btn);
+  border-radius: 4px;
+  font-size: var(--onboarding_button);
+  padding: 5px;
+  width: 99%;
+}
+.loginForm .login_items .terms_condition {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 90%;
+}
+.loginForm .login_items .terms_condition span a {
+  color: var(--yellow_btn);
+}
+.loginForm .login_items .otp_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loginForm .login_items .otp_container h4 {
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.loginForm .login_items .otp_container .otp_input {
+  display: flex;
+  gap: 10px;
+}
+.loginForm .login_items .otp_container .otp_input input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.loginForm .login_items .otp_container .otp_input input:focus {
+  border-color: #007BFF;
+}
+.loginForm .login_items .otp_container .otp_input input::-webkit-inner-spin-button, .loginForm .login_items .otp_container .otp_input input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.loginForm .login_items .otp_container .terms_condition {
+  margin-top: 20px;
+}
+.loginForm .login_items .otp_container .terms_condition button {
+  padding: 10px 20px;
+  background-color: var(--blue_color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.loginForm .login_items .otp_container .terms_condition button span {
+  font-size: 16px;
+}
+
+.fixed_header_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #f4f4f4;
+  z-index: 900;
+}
+
+.head {
+  justify-content: center;
+  padding: 10px 0px;
+  background-color: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+.head .header_items {
+  justify-content: space-between;
+}
+.head .header_items .profil_photo {
+  width: 40px;
+  height: 40px;
+}
+.head .header_items .profil_photo a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+.head .header_items .profil_photo a img {
+  border: 1px solid var(--yellow_btn);
+  border-radius: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.head .header_items .logo {
+  display: flex;
+  width: 115px;
+}
+.head .header_items .logo a {
+  display: flex;
+  width: 100%;
+}
+.head .header_items .logo a img {
+  width: 100%;
+}
+.head .header_items .notification_icons a {
+  display: flex;
+  width: 100%;
+}
+.head .header_items .notification_icons a i {
+  font-size: 20pt;
+  color: var(--blue_color);
+}
+
+.tab_button {
+  position: fixed;
+  width: 100%;
+  top: 50px;
+  z-index: 999;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.tab_button .tablink {
+  background-color: var(--white);
+  color: var(--blue_color);
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 12pt;
+  width: 50%;
+  font-weight: 400;
+}
+.tab_button .tabcontent {
+  color: white;
+  display: none;
+  height: 100%;
+}
+.tab_button .tabcontent.active {
+  display: block;
+}
+.tab_button .tabcontent .card_container {
+  margin: 15px 0;
+}
+.tab_button .tabcontent .card_container:first-child {
+  margin-top: 120px;
+}
+
+.card {
+  padding-top: 0;
+}
+.card:first-child {
+  margin-top: 120px;
+}
+.card .card_items {
+  background-color: var(--white);
+  padding: 10px;
+  border-radius: 10px;
+}
+.card .card_items .picture_name_time_points {
+  justify-content: space-between;
+}
+.card .card_items .picture_name_time_points .picture_name_time {
+  gap: 10px;
+  width: 310px;
+}
+.card .card_items .picture_name_time_points .picture_name_time .profile_pic {
+  width: 30px !important;
+  height: 30px !important;
+  width: 40px;
+  height: 40px;
+}
+.card .card_items .picture_name_time_points .picture_name_time .profile_pic a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+.card .card_items .picture_name_time_points .picture_name_time .profile_pic a img {
+  border: 1px solid var(--yellow_btn);
+  border-radius: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.card .card_items .picture_name_time_points .picture_name_time .profile_pic img {
+  border: none !important;
+}
+.card .card_items .picture_name_time_points .picture_name_time .username {
+  font-weight: 600;
+  font-size: 10pt;
+}
+.card .card_items .picture_name_time_points .picture_name_time .username_point {
+  width: 7px;
+  height: 7px;
+  background: black;
+  border-radius: 100%;
+}
+.card .card_items .picture_name_time_points .picture_name_time .time_post {
+  font-weight: 400;
+}
+.card .card_items .tree_dots {
+  gap: 5px;
+}
+.card .card_items .tree_dotsBtn {
+  border: none;
+  background-color: #FFF;
+  gap: 5px;
+}
+.card .card_items .tree_dotsBtn .tree_dots_items {
+  width: 5px;
+  height: 5px;
+  background: black;
+  border-radius: 100%;
+}
+.card .card_items .card_text {
+  font-size: 10pt;
+}
+.card .card_items .card_rectangle {
+  width: 100%;
+  height: 2px;
+  background: var(--yellow_btn);
+}
+.card .card_items .readBtn {
+  border: none;
+  background-color: transparent;
+  color: var(--blue_color);
+  cursor: pointer;
+  font-size: 10pt;
+  padding: 0;
+  font-weight: 700;
+}
+.card .card_items .action_button {
+  justify-content: space-between;
+}
+.card .card_items .action_button .button_action {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--blue_color);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.card .card_items .action_button .button_action .icon,
+.card .card_items .action_button .button_action .count {
+  font-size: 12pt;
+}
+.card .card_items .action_button .button_action .count {
+  color: black;
+}
+
+.logo {
+  width: 50px;
+}
+
+.menu_nav {
+  position: fixed;
+  top: 0;
+  left: -72%;
+  width: 59%;
+  height: 100%;
+  padding: 20px;
+  background-color: #181d23;
+  backdrop-filter: blur(4px);
+  flex-direction: column;
+  transform: translateX(0);
+  transition: transform 0.5s ease;
+  z-index: 2;
+  display: flex;
+}
+
+.menu_nav_actived {
+  transform: translateX(100%);
+}
+
+.menu_nav a {
+  border-bottom: 1px dotted var(--outline);
+  padding: 10px 10px 10px 20px;
+  width: 80%;
+}
+
+/*# sourceMappingURL=style.css.map */
